@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Assignment IP.2
+Jacob Chlebowski - jachlebowski@wpi.edu
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
