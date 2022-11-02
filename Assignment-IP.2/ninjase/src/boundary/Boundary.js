@@ -17,7 +17,7 @@ export function redrawCanvas(model, canvasObj, appObj){
     let nc = model.configuration.numColumns;
 
     ctx.fillStyle = 'white';
-    ctx.fillRect(0,0,100*nc,100*nr);
+    ctx.fillRect(10,100,200*nc,200*nr);
 
 }
 

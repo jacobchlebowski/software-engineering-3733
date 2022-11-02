@@ -32,18 +32,27 @@ function App() {
 
   return (
       <main style={layout.Appmain} ref={appRef}>
+        <div style={layout.configurationbuttons}>
+        <button style={layout.levelbuttonsone}>Level 1</button>
+        <button style={layout.levelbuttonstwo}>Level 2</button>
+        <button style={layout.levelbuttonsthree}>Level 3</button>
+        </div>
+        <button style={layout.resetbutton}>Reset!</button>
         <canvas tabIndex="1"
         className="App-canvas"
         ref={canvasRef}
         width={layout.canvas.width}
         height={layout.canvas.height}
         />
+        <br></br><text style={layout.signature}>Jacob Chlebowski</text><br></br>
+        <text style={layout.signature}>jachlebowski@wpi.edu</text>
         <label style={layout.text}> {"number moves: " + model.numMoves}</label>
         <div style={layout.buttons}>
             <button style={layout.upbutton}>^</button>
             <button style={layout.leftbutton}>&lt;</button>
             <button style={layout.rightbutton}>&gt;</button>
-            <button style={layout.downbutton}>v;</button>
+            <button style={layout.downbutton}>v</button>
+            <button style={layout.pickupkeybutton}>Pick-Up Key!</button>
         </div>
       </main>
   );

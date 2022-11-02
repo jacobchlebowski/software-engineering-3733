@@ -1,28 +1,69 @@
 export const layout = {
     canvas :  {
-        height: "500",
-        width: "500",
+        height: "800",
+        width: "800",
     },
 
     Appmain : {
         backgroundColor: "#320453",
-        height: "100vh",
-        width: "100vw",
+        height: "150vh",
+        width: "150vw",
     },
 
     text : {
         position: "absolute",
-        left:500,
-        top:50,
+        left:1000,
+        top:150,
         color:"yellow",
         backgroundColor: "#320453",
         width:150,
     },
 
+
+    signature : {
+        position: "absolute",
+        color:"yellow",
+        backgroundColor: "#320453",
+    },
+
+
+    configurationbuttons : {
+        position: "absolute",
+        left : 500
+    },
+
+
+    levelbuttonsone : {
+        position: "absolute",
+        width:200,
+        height:30,
+        top:20,
+    },
+
+
+    levelbuttonstwo : {
+        position: "absolute",
+        left:200,
+        width:200,
+        height:30,
+        top:20,
+    },
+
+
+    levelbuttonsthree: {
+        position: "absolute",
+        left:400,
+        width:200,
+        height:30,
+        top:20,
+    },
+
+
+
     buttons : {
         position: "absolute",
-        left: 550,
-        top: 90
+        left: 1000,
+        top: 150,
     },
 
 
@@ -30,23 +71,49 @@ export const layout = {
         position: "absolute",
         left:50,
         top:80,
+        width:40,
+        height:40,
     },
 
     downbutton: {
         position: "absolute",
         left:50,
         top:120,
+        width:40,
+        height:40,
     },
 
     leftbutton: {
         position: "absolute",
         top:100,
+        width:40,
+        height:40,
     },
 
     rightbutton: {
         position: "absolute",
         top:100,
         left: 100,
+        width:40,
+        height:40,
+    },
+
+
+    pickupkeybutton: {
+        position: "absolute",
+        left:25,
+        top:200,
+        width:100,
+        height:40,
+    },
+
+
+    resetbutton: {
+        position: "absolute",
+        width:200,
+        height:30,
+        left:100,
+        top:20,
     },
 
 }
