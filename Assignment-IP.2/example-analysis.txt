@@ -1,0 +1,40 @@
+MoveType (ex: 1,0 = move 1 right, 0 down/up)
+----------
+deltar : int 
+deltac : int
+
+
+Coordinate
+------------
+row : int
+column : int
+
+
+Puzzle
+---------
+pieces:Piece[*]
+numRows: int
+numColumns: int
+selected: Piece[0..1]
+destination : Coordinate
+finalMove: MoveType
+
+
+
+Piece
+------
+width: int
+height: int
+row: int	//0 and higher
+column: int
+isWinner: boolean
+
+
+
+
+Model
+-----
+puzzle : Puzzle
+numMoves: int
+victory : boolean
+
