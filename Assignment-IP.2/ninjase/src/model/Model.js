@@ -44,7 +44,7 @@ export class Ninjase {
     constructor(row,column){
         this.row = row
         this.column = column
-        currentKey = null;
+        this.currentKey = null;
     }
 }
 
