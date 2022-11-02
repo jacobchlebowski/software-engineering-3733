@@ -40,11 +40,12 @@ resetPuzzle()
 
 Configuration
 ----------------
-cells:Cell[*]
 numsRows : int
 numColumns : int
-doorsLeft : int (once doorsLeft === 0, game over)
 ninjase : Ninajse
+walls : Wall[*]
+doors : Door[*]
+keys  : Key[*]
 
 
 =====================================================================================================
@@ -54,14 +55,23 @@ deltar : int
 deltac : int
 
 
-LockedDoor
+Door
 ---------------
-doorColor : String
-
+row : int
+column : int
+color : String
 
 Key
 -----
-keyColor : String
+row : int
+column : int
+color : String
+
+
+Wall
+-------
+row : int
+column : int
 
 
 
@@ -71,15 +81,6 @@ row : int
 column : int
 currentKey : Key[0..1]
 
-
-
-Cell
-------
-wall : boolean
-row : int
-column : int
-onCellKey : Key[0..1]
-onCellDoor : LockedDoor[0..1]
 
 
 =============================================================================================
