@@ -43,9 +43,9 @@ Configuration
 numsRows : int
 numColumns : int
 ninjase : Ninajse
-walls : Wall[*]
-doors : Door[*]
-keys  : Key[*]
+////walls : Wall[*]
+////doors : Door[*]
+////keys  : Key[*]
 
 
 =====================================================================================================
