@@ -141,7 +141,7 @@ export default class Model {
         //make configuration
         let numRows = parseInt(info.rows)
         let numColumns = parseInt(info.columns)
-        let ninjase =  parseInt(info.ninjase)
+        let ninjase =  info.ninjase
 
         var allWalls = [];
         for (let p of info.walls) {
@@ -175,7 +175,5 @@ export default class Model {
         this.configuration.initialize(allWalls,allKeys,allDoors);
         this.numMoves = 0;
         this.victory = false;
-
-        this.showLabels = false;
     }
 }

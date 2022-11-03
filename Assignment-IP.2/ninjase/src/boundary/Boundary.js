@@ -16,8 +16,14 @@ export class Rectangle{
 /**Map wall/keys/doors into rectangle in configuration view */
 export function computeRectangle(wall){
     let c = wall.location();
+    const test = new Rectangle(BOXSIZE*wall.column + OFFSET, BOXSIZE*wall.row + OFFSET, 
+        BOXSIZE - 2*OFFSET, BOXSIZE - 2*OFFSET);
+
+    
+    console.log(test)
+
     return new Rectangle(BOXSIZE*c.column + OFFSET, BOXSIZE*c.row + OFFSET, 
-        BOXSIZE*wall.width - 2*OFFSET, BOXSIZE*wall.height - 2*OFFSET);
+        BOXSIZE - 2*OFFSET, BOXSIZE - 2*OFFSET);
 } 
 
 
@@ -35,8 +41,6 @@ export function drawConfiguration(ctx,configuration){
         //ctx.shadowBlur=10;
         ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
     })
-    
-
     
     // configuration.keys.forEach(key=>{
     //     let rect = computeRectangle(key);

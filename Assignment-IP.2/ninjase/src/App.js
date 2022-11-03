@@ -4,7 +4,7 @@ import React from 'react';
 import './App.css';
 import { layout } from './Layout';
 import Model from './model/Model.js';
-import { redrawCanvas } from './boundary/Boundary';
+import { redrawCanvas } from './boundary/Boundary.js';
 /////////////////////////////////////
 
 
