@@ -44,8 +44,8 @@ function App() {
         width={layout.canvas.width}
         height={layout.canvas.height}
         />
-        <br></br><text style={layout.signature}>Jacob Chlebowski</text><br></br>
-        <text style={layout.signature}>jachlebowski@wpi.edu</text>
+        <br></br><label style={layout.signature}>Jacob Chlebowski</label><br></br>
+        <label style={layout.signature}>jachlebowski@wpi.edu</label>
         <label style={layout.text}> {"number moves: " + model.numMoves}</label>
         <div style={layout.buttons}>
             <button style={layout.upbutton}>^</button>

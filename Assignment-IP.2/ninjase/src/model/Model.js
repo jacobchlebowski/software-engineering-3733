@@ -5,13 +5,14 @@
 //     }
 // }
 
-// //Not needed?
-// export class Coordinate {
-//     constructor(row,column){
-//         this.row = row;
-//         this.column = column;
-//     }
-// }
+//Needed for keys/doors/walls??
+export class Coordinate {
+    constructor(row,column){
+        this.row = row;
+        this.column = column;
+    }
+}
+
 
 //Key and door have corresponding colors
 export class Key{
@@ -19,6 +20,23 @@ export class Key{
        this.row = row;
        this.column = column;
        this.color = color;
+    }
+
+    place(row,col){
+        this.row=row;
+        this.column=col;
+    }
+
+    location() {
+        return new Coordinate(this.row,this.column);
+       }
+
+
+    //used for solving
+    copy(){
+        let k = new Key(this.row,this.column,this.color);
+        k.place(this.row,this.column);
+        return k;
     }
 }
 
@@ -29,6 +47,20 @@ export class Door{
        this.column = column;
        this.color = color;
     }
+    place(row,col){
+        this.row=row;
+        this.column=col;
+    }
+
+    location() {
+        return new Coordinate(this.row,this.column);
+       }
+
+    copy(){
+        let d = new Door(this.row,this.column,this.color);
+        d.place(this.row,this.column);
+        return d;
+    }
 }
 
 
@@ -36,6 +68,21 @@ export class Wall{
     constructor(row,column){
         this.row = row;
         this.column = column;
+    }
+    place(row,col){
+        this.row=row;
+        this.column=col;
+    }
+
+    location() {
+        return new Coordinate(this.row,this.column);
+       }
+
+
+    copy(){
+        let w = new Door(this.row,this.column);
+        w.place(this.row,this.column);
+        return w;
     }
 }
 
@@ -46,20 +93,42 @@ export class Ninjase {
         this.column = column
         this.currentKey = null;
     }
+
+    location() {
+        return new Coordinate(this.row,this.column);
+       }
 }
 
 
 
-//THIS IS THE PUZZLE
+//THIS IS THE CONFIGURATION
 export class Configuration {
-  constructor(numRows,numColumns, ninjase, walls, doors, keys){
+  constructor(numRows,numColumns, ninjase){
         this.numRows = numRows;
         this.numColumns = numColumns;
         this.ninjase = ninjase;
-        this.walls = walls
-        this.doors = doors
-        this.keys = keys
   }
+
+  initialize(walls,keys,doors){
+    //make sure to create NEW walls/keys/doors objects
+    this.walls = walls.map(p=>p.copy());
+    this.keys  = keys.map(k=>k.copy());
+    this.doors = doors.map(d => d.copy());
+  }
+
+  //return all blocks?
+//   *blocks() {
+//     for(let i=0; i<this.walls.length; i++){
+//         yield this.walls[i];
+//     }
+//     for(let j=0; j<this.keys.length; j++){
+//         yield this.keys[j];
+//     }
+//     for(let k=0; k<this.doors.length; k++){
+//         yield this.doors[k];
+//     }
+//   }
+
 }
 
 
@@ -69,17 +138,44 @@ export default class Model {
         this.initialize(info);
     }
     initialize(info){
-        //make puzzle
+        //make configuration
         let numRows = parseInt(info.rows)
         let numColumns = parseInt(info.columns)
         let ninjase =  parseInt(info.ninjase)
-        let walls = []
-        let doors = []
-        let keys  = []
+
+        var allWalls = [];
+        for (let p of info.walls) {
+            allWalls.push(new Wall(parseInt(p.row), parseInt(p.column)));
+        }
+
+
+        var allDoors = [];
+        for (let d of info.doors) {
+            allDoors.push(new Door(parseInt(d.row), parseInt(d.column),d.color));
+        }
+
+        var allKeys = [];
+        for (let k of info.keys) {
+            allKeys.push(new Key(parseInt(k.row), parseInt(k.column),k.color));
+        }
+
+        
+        //Coordinates of Keys
+        for (let loc of info.keys){
+            let coord = new Coordinate(parseInt(loc.row),parseInt(loc.column));
+        }
+        // //Coordinates of Ninjase?
+        // for (let loc of info.ninjase){
+        //     let coord = new Coordinate(parseInt(loc.row),parseInt(loc.column));
+        // }
+
 
         //initialize
-        this.configuration = new Configuration(numRows,numColumns,ninjase, walls, doors, keys)
+        this.configuration = new Configuration(numRows,numColumns,ninjase)
+        this.configuration.initialize(allWalls,allKeys,allDoors);
         this.numMoves = 0;
         this.victory = false;
+
+        this.showLabels = false;
     }
 }
