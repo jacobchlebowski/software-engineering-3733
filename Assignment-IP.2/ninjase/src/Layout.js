@@ -112,7 +112,7 @@ export const layout = {
         position: "absolute",
         width:200,
         height:30,
-        left:100,
+        left:1150,
         top:20,
     },
 

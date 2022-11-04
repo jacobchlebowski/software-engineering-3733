@@ -93,10 +93,21 @@ export class Ninjase {
         this.column = column
         this.currentKey = null;
     }
+    place(row,col){
+        this.row=row;
+        this.column=col;
+    }
 
     location() {
         return new Coordinate(this.row,this.column);
        }
+
+
+    copy(){
+        let w = new Ninjase(this.row,this.column);
+        w.place(this.row,this.column);
+        return w;
+    }
 }
 
 
@@ -109,11 +120,12 @@ export class Configuration {
         this.ninjase = ninjase;
   }
 
-  initialize(walls,keys,doors){
+  initialize(walls,keys,doors,ninjase){
     //make sure to create NEW walls/keys/doors objects
     this.walls = walls.map(p=>p.copy());
     this.keys  = keys.map(k=>k.copy());
     this.doors = doors.map(d => d.copy());
+    this.ninjase = ninjase.map(n => n.copy());
   }
 
   //return all blocks?
@@ -159,20 +171,24 @@ export default class Model {
             allKeys.push(new Key(parseInt(k.row), parseInt(k.column),k.color));
         }
 
+        var allNinjase = [];
+        let n = info.ninjase;
+        allNinjase.push(new Ninjase(parseInt(n.row),parseInt(n.column), null));
+
         
         //Coordinates of Keys
         for (let loc of info.keys){
             let coord = new Coordinate(parseInt(loc.row),parseInt(loc.column));
         }
+
         // //Coordinates of Ninjase?
-        // for (let loc of info.ninjase){
-        //     let coord = new Coordinate(parseInt(loc.row),parseInt(loc.column));
-        // }
+        // let loc = info.ninjase
+        // let coord = new Coordinate(parseInt(loc.row),parseInt(loc.column));
 
 
         //initialize
         this.configuration = new Configuration(numRows,numColumns,ninjase)
-        this.configuration.initialize(allWalls,allKeys,allDoors);
+        this.configuration.initialize(allWalls,allKeys,allDoors,allNinjase);
         this.numMoves = 0;
         this.victory = false;
     }
