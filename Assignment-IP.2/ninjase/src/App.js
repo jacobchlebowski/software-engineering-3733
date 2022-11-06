@@ -9,8 +9,8 @@ import { redrawCanvas } from './boundary/Boundary.js';
 
 
 //Model
-import { level1 } from './model/Configuration.js'
-var actualConfiguration = JSON.parse(JSON.stringify(level1));
+import { level3 } from './model/Configuration.js'
+var actualConfiguration = JSON.parse(JSON.stringify(level3));
 
 
 //Application
