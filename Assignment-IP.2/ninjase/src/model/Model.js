@@ -117,7 +117,7 @@ export class Configuration {
   constructor(numRows,numColumns, ninjase){
         this.numRows = numRows;
         this.numColumns = numColumns;
-        this.ninjase = ninjase;
+        this.ninjase = ninjase; 
   }
 
   initialize(walls,keys,doors,ninjase){
@@ -126,6 +126,34 @@ export class Configuration {
     this.keys  = keys.map(k=>k.copy());
     this.doors = doors.map(d => d.copy());
     this.ninjase = ninjase.map(n => n.copy());
+  }
+
+  moveNinjase(ninjase){
+    this.ninjase = ninjase;
+  }
+
+  clone(){
+    let copy = new Configuration(this.numsRows, this.numColumns, this.ninjase);
+    copy.walls = [];
+    copy.keys =  [];
+    copy.doors = [];
+    for(let w of this.walls){
+        let dup = w.copy();
+        copy.walls.push(dup);
+    }
+    for(let k of this.keys){
+        let dup = k.copy();
+        copy.keys.push(dup);
+    }
+    for(let d of this.doors){
+        let dup = d.copy();
+        copy.doors.push(dup);
+    }
+    for(let n of this.ninjase){
+        let dup = n.copy();
+        copy.ninjase.push(dup)
+    }
+    return copy;
   }
 
   //return all blocks?
@@ -148,6 +176,7 @@ export default class Model {
     //info is going to be JSON-encoded configuration
     constructor(info) {
         this.initialize(info);
+        this.info = info;
     }
     initialize(info){
         //make configuration
@@ -191,5 +220,14 @@ export default class Model {
         this.configuration.initialize(allWalls,allKeys,allDoors,allNinjase);
         this.numMoves = 0;
         this.victory = false;
+    }
+
+
+    copy(){
+        let m = new Model(this.info);
+        m.configuration = this.configuration.clone();
+        m.numMoves = this.numMoves;
+        m.victory = this.victory;
+        return m;
     }
 }

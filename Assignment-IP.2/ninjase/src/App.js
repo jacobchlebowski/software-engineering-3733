@@ -5,12 +5,13 @@ import './App.css';
 import { layout } from './Layout';
 import Model from './model/Model.js';
 import { redrawCanvas } from './boundary/Boundary.js';
+import { moveNinjase } from './controller/Controller.js'
 /////////////////////////////////////
 
 
 //Model
-import { level3 } from './model/Configuration.js'
-var actualConfiguration = JSON.parse(JSON.stringify(level3));
+import { level1 } from './model/Configuration.js'
+var actualConfiguration = JSON.parse(JSON.stringify(level1));
 
 
 //Application
@@ -30,6 +31,11 @@ function App() {
   }, [model])   // this second argument is CRITICAL, since it declares when to refresh (whenever Model changes)
 
 
+  const handleClick = (e) => {
+    let newModel = moveNinjase(model, canvasRef.current, e);
+    setModel(newModel); //react to changes, if model has changed.
+  }
+
   return (
       <main style={layout.Appmain} ref={appRef}>
         <div style={layout.configurationbuttons}>
@@ -43,6 +49,7 @@ function App() {
         ref={canvasRef}
         width={layout.canvas.width}
         height={layout.canvas.height}
+        onClick = {handleClick}
         />
         <br></br><label style={layout.signature}>Jacob Chlebowski</label><br></br>
         <label style={layout.signature}>jachlebowski@wpi.edu</label>
