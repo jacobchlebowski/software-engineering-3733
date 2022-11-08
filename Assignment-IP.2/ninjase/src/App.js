@@ -32,10 +32,6 @@ function App() {
   }, [model])   // this second argument is CRITICAL, since it declares when to refresh (whenever Model changes)
 
 
-  const handleClick = (e) => {
-    let newModel = moveNinjase(model, canvasRef.current, e);
-    setModel(newModel); //react to changes, if model has changed.
-  }
 
   const moveNinjaseHandler = (direction) => {
     let newModel = moveNinjase(model,direction);
@@ -58,7 +54,6 @@ function App() {
         ref={canvasRef}
         width={layout.canvas.width}
         height={layout.canvas.height}
-        onClick = {handleClick}
         />
         <br></br><label style={layout.signature}>Jacob Chlebowski</label><br></br>
         <label style={layout.signature}>jachlebowski@wpi.edu</label>

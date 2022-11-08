@@ -100,19 +100,20 @@ export class Wall{
     }
     
     
-    contains(coord){
-        let cs = [...this.cordinates()];
-        for(let c of cs){
-            if(c.row === coord.row && c.column === coord.column){
-                return true;
-            }
+    contains(coord) {
+        let cs = [...this.coordinates()];   // javascript one liner.... turn all of those yield into a list.
+        for (let c of cs) {
+            if (c.row === coord.row && c.column === coord.column) { 
+                return true; 
+            } 
         }
+        
         return false;
     }
     
     
     copy(){
-        let w = new Door(this.row,this.column);
+        let w = new Wall(this.row,this.column);
         w.place(this.row,this.column);
         return w;
     }
@@ -167,6 +168,7 @@ export class Configuration {
     /**Determines if any walls in the puzzle covers given coordinates */
     isCovered(coord){
         let idx = this.walls.findIndex(wall => wall.contains(coord));
+        
         //if we found a wall that covers coordinate, return true; otherwise false.
         return idx >= 0;
     }
@@ -176,8 +178,9 @@ export class Configuration {
         let p = this.ninjase;
         if (p == null) {return []; }
         let moves = [];
-        let coord = new Coordinate(p.row,p.column);
-        
+        let coord = this.ninjase[0].location();
+
+
         //can ninjase move left?
         let available = false;
         if(coord.column > 0){
@@ -194,8 +197,9 @@ export class Configuration {
         }
         
         
-        available = false;
+        //console.log("coordColumn: " + coord.column + "  numColumns: " + this.numColumns)
         //can ninjase move right?
+        available = false;
         if(coord.column < this.numColumns){
             available = true;
                 if(this.isCovered(new Coordinate(coord.row-1, coord.column))){
