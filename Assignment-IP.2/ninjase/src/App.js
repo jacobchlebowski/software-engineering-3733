@@ -5,7 +5,8 @@ import './App.css';
 import { layout } from './Layout';
 import Model from './model/Model.js';
 import { redrawCanvas } from './boundary/Boundary.js';
-import { moveNinjase } from './controller/Controller.js'
+import { moveNinjase } from './controller/Controller.js';
+import { Up, Down, Left, Right } from './model/Model.js';
 /////////////////////////////////////
 
 
@@ -36,6 +37,14 @@ function App() {
     setModel(newModel); //react to changes, if model has changed.
   }
 
+  const moveNinjaseHandler = (direction) => {
+    let newModel = moveNinjase(model,direction);
+    setModel(newModel); //react to chanes, if model has changed.
+  }
+
+
+
+
   return (
       <main style={layout.Appmain} ref={appRef}>
         <div style={layout.configurationbuttons}>
@@ -55,10 +64,10 @@ function App() {
         <label style={layout.signature}>jachlebowski@wpi.edu</label>
         <label style={layout.text}> {"number moves: " + model.numMoves}</label>
         <div style={layout.buttons}>
-            <button style={layout.upbutton}>^</button>
-            <button style={layout.leftbutton}>&lt;</button>
-            <button style={layout.rightbutton}>&gt;</button>
-            <button style={layout.downbutton}>v</button>
+            <button style={layout.upbutton} onClick={(e)=> moveNinjaseHandler(Up)} disabled={!model.available(Up)}>^</button>
+            <button style={layout.leftbutton} onClick={(e)=> moveNinjaseHandler(Left)} disabled={!model.available(Left)}>&lt;</button>
+            <button style={layout.rightbutton} onClick={(e)=> moveNinjaseHandler(Right)} disabled={!model.available(Right)}>&gt;</button>
+            <button style={layout.downbutton} onClick={(e)=> moveNinjaseHandler(Down)} disabled={!model.available(Down)}>v</button>
             <button style={layout.pickupkeybutton}>Pick-Up Key!</button>
         </div>
       </main>
