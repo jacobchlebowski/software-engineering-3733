@@ -175,63 +175,70 @@ export class Configuration {
     
     
     availableMoves(){
-        let p = this.ninjase;
+        let p = this.ninjase[0];
         if (p == null) {return []; }
         let moves = [];
         let coord = this.ninjase[0].location();
 
 
-          //can ninjase move left?
-          let available = false;
-          if(coord.column < this.numColumns){
-              available = true;
-              let newCoordColumnLeft = coord.column-1
-              //console.log("coordRow: " + coord.row + " coordColumn: " + newCoordColumn)
-                  if(this.isCovered(new Coordinate(coord.row, newCoordColumnLeft))){
-                      available=false;
-                  }
-          }
-          if(available){
-              moves.push(Left);
-          }
+        //   //can ninjase move left?
+        //   let available = false;
+        //   if(coord.column < this.numColumns && (coord.column != 0)){
+        //       available = true;
+        //       let newCoordColumnLeft = coord.column+1
+        //       //console.log("coordRow: " + coord.row + " coordColumn: " + newCoordColumn)
+        //           if(this.isCovered(new Coordinate(coord.row, newCoordColumnLeft))){
+        //               available=false;
+        //           }
+        //   }
+        //   if(available){
+        //       moves.push(Left);
+        //   }
         
         
 
-        //can ninjase move right?
-        available = false;
-        if(coord.column < this.numColumns){
-            available = true;
-            let newCoordColumnRight = coord.column+1
-                if(this.isCovered(new Coordinate(coord.row, newCoordColumnRight))){
-                    available=false;
-                }
+        // //can ninjase move right?
+        // available = false;
+        // if(coord.column < this.numColumns-1){
+        //     available = true;
+        //     let newCoordColumnRight = coord.column+1
+        //         if(this.isCovered(new Coordinate(coord.row, newCoordColumnRight))){
+        //             available=false;
+        //         }
+        // }
+        // if(available){
+        //     moves.push(Right);
+        // }
+        
+        
+        //can ninjase move up?
+        let available = false
+        let location = this.ninjase[0].row
+        console.log("FAKE = " + location  + "  numRows= " + this.ninjase[0].column);
+        console.log("coord.row = " + coord.row + "  numRows= " + this.numRows);
+        if(coord.row > 0){
+            available=true;
+            let newCoordRowUp = coord.row-1
+            if (this.isCovered(new Coordinate(newCoordRowUp, coord.column))) {
+                available=false;
+            }
         }
         if(available){
-            moves.push(Right);
+            moves.push(Up);
         }
         
         
-       //can ninjase move down?
-       available = false;
-       if(coord.column < this.numColumns){
-           available = true;
-           let newCoordColumnDown = coord.row-1
-               if(this.isCovered(new Coordinate(coord.row, newCoordColumnDown))){
-                   available=false;
-               }
-       }
-       if(available){
-           moves.push(Down);
-       }
-        
 
-        
+
+
+        console.log(moves);
         return moves;
     }
     
     
     clone(){
         let copy = new Configuration(this.numsRows, this.numColumns, this.ninjase);
+
         copy.walls = [];
         copy.keys =  [];
         copy.doors = [];
@@ -248,8 +255,9 @@ export class Configuration {
             copy.doors.push(dup);
         }
 
-            let dup = this.ninjase[0].copy();
-            copy.ninjase.push(dup)
+        let dup = this.ninjase[0].copy();
+        copy.ninjase.push(dup)
+      
   
         return copy;
     }
@@ -326,16 +334,9 @@ export default class Model {
     
     copy(){
         let m = new Model(this.info);
-
-        //CLONING ISSUE!//////////
         m.configuration = this.configuration.clone();
-        //CLONING ISSUE!/////////
-
-        console.log("third");
         m.numMoves = this.numMoves;
-        console.log("fourth");
         m.victory = this.victory;
-        console.log("fifth-return");
         return m;
     }
 }
