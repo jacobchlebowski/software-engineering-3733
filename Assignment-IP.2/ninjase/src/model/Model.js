@@ -181,39 +181,8 @@ export class Configuration {
         let coord = this.ninjase[0].location();
 
 
-        //   //can ninjase move left?
-        //   let available = false;
-        //   if(coord.column < this.numColumns && (coord.column != 0)){
-        //       available = true;
-        //       let newCoordColumnLeft = coord.column+1
-        //       //console.log("coordRow: " + coord.row + " coordColumn: " + newCoordColumn)
-        //           if(this.isCovered(new Coordinate(coord.row, newCoordColumnLeft))){
-        //               available=false;
-        //           }
-        //   }
-        //   if(available){
-        //       moves.push(Left);
-        //   }
-        
-        
-
-        // //can ninjase move right?
-        // available = false;
-        // if(coord.column < this.numColumns-1){
-        //     available = true;
-        //     let newCoordColumnRight = coord.column+1
-        //         if(this.isCovered(new Coordinate(coord.row, newCoordColumnRight))){
-        //             available=false;
-        //         }
-        // }
-        // if(available){
-        //     moves.push(Right);
-        // }
-        
-        
         //can ninjase move up?
         let available = false
-        let location = this.ninjase[0].row
         if(coord.row > 0){
             available=true;
             let newCoordRowUp = coord.row-1
@@ -224,7 +193,20 @@ export class Configuration {
         if(available){
             moves.push(Up);
         }
-        
+
+
+        //can ninjase move down?
+        available = false
+        if(coord.row < 5){
+            available = true;
+            let newCoordRowDown = coord.row+1
+            if(this.isCovered(new Coordinate(newCoordRowDown, coord.column))){
+                available=false;
+            }
+        }
+        if(available){
+            moves.push(Down);
+        }
         
 
 
