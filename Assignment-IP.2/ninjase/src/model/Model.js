@@ -214,8 +214,6 @@ export class Configuration {
         //can ninjase move up?
         let available = false
         let location = this.ninjase[0].row
-        console.log("FAKE = " + location  + "  numRows= " + this.ninjase[0].column);
-        console.log("coord.row = " + coord.row + "  numRows= " + this.numRows);
         if(coord.row > 0){
             available=true;
             let newCoordRowUp = coord.row-1
@@ -231,7 +229,6 @@ export class Configuration {
 
 
 
-        console.log(moves);
         return moves;
     }
     
@@ -256,9 +253,8 @@ export class Configuration {
         }
 
         let dup = this.ninjase[0].copy();
-        copy.ninjase.push(dup)
+        this.ninjase = dup
       
-  
         return copy;
     }
     
