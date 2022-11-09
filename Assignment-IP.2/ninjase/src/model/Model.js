@@ -131,8 +131,8 @@ export class Ninjase {
         this.column=col;
     }
     move(direction){
-        this.row += direction.deltar;
         this.column += direction.deltac;
+        this.row += direction.deltar;
     }
     
     location() {
@@ -247,10 +247,10 @@ export class Configuration {
             let dup = d.copy();
             copy.doors.push(dup);
         }
-        for(let n of this.ninjase){
-            let dup = n.copy();
+
+            let dup = this.ninjase[0].copy();
             copy.ninjase.push(dup)
-        }
+  
         return copy;
     }
     
@@ -326,9 +326,16 @@ export default class Model {
     
     copy(){
         let m = new Model(this.info);
+
+        //CLONING ISSUE!//////////
         m.configuration = this.configuration.clone();
+        //CLONING ISSUE!/////////
+
+        console.log("third");
         m.numMoves = this.numMoves;
+        console.log("fourth");
         m.victory = this.victory;
+        console.log("fifth-return");
         return m;
     }
 }

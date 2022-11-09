@@ -20,8 +20,14 @@ import { move } from "../model/Model";
 
 export function moveNinjase(model,direction){
     let selected = model.configuration.ninjase;
-    selected.move(direction)
+
+
+    // console.log(model.configuration.ninjase[0]);
+    
+
+    selected[0].move(direction)
 
     model.updateMoveCount(+1);
+
     return model.copy(); 
 }
