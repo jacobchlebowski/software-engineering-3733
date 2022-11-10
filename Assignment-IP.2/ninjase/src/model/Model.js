@@ -193,14 +193,33 @@ export class Configuration {
     /**Determines if any keys in the puzzle covers given coordinates (of ninjase) */
     isCoveredKey(coord){
         let idx = this.keys.findIndex(key => key.contains(coord));
-        console.log(idx)
         
         //if we found a key that covers coordinate, return true; otherwise false.
-        return idx >= 0;
+        return idx;
     }
+
+
     keyPickUp() {
-        if(this.isCoveredKey(new Coordinate(this.ninjase[0].row, this.ninjase[0].column))){
-            console.log('key here!')
+
+        //IF NINJASE IS ON KEY
+        if(  (this.isCoveredKey(new Coordinate(this.ninjase[0].row, this.ninjase[0].column))) >= 0  ){
+            //INDEX OF KEY
+            let index = (this.isCoveredKey(new Coordinate(this.ninjase[0].row, this.ninjase[0].column)))
+
+            //NINJASE PICKUP KEY
+            
+            //if ninjase is not already holding a key... just pick it up...
+            if(this.ninjase.currentKey==null){
+                //remove KEY from ARRAY AND GIVE TO NINJASE
+                if(index > -1){
+                    // console.log(this.ninjase.currentKey)
+                    let key = this.keys.splice(index,1)
+                     this.ninjase.currentKey=key
+                    // console.log(this.ninjase.currentKey)
+                }
+
+            }
+            
         }
     }
 
@@ -242,7 +261,7 @@ export class Configuration {
         }
 
 
-        //can ninjase move right?
+        //can ninjase move right? //ALSO CHECK NOW IF DOOR IS THERE CAN NINJASE MOVE INTO DOOR
         available = false
         if(coord.column < 3){
             available = true;
