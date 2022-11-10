@@ -221,14 +221,15 @@ export class Configuration {
             else{
                 //recognize key on ground...old key on reserve
                 let oldKey = this.ninjase.currentKey[0]
+                oldKey.row = this.ninjase[0].row
+                oldKey.column = this.ninjase[0].column
+                oldKey.color = this.ninjase.currentKey[0].color
+                
                 if(index > -1){
                     let newKey = this.keys.splice(index,1)
                     this.ninjase.currentKey[0]=newKey[0]
                 }
-
-                // this.keys.push(new Key(oldKey.row,oldKey.column,oldKey.color))
                 this.keys.push(oldKey)
-                console.log(this.keys)
             }
             
             
