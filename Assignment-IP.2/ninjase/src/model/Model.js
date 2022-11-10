@@ -47,6 +47,21 @@ export class Key{
     location() {
         return new Coordinate(this.row,this.column);
     }
+
+    *coordinates(){
+        yield new Coordinate(this.row,this.column);
+    }
+
+    contains(coord) {
+        let cs = [...this.coordinates()];   // javascript one liner.... turn all of those yield into a list.
+        for (let c of cs) {
+            if (c.row === coord.row && c.column === coord.column) { 
+                return true; 
+            } 
+        }
+        
+        return false;
+    }
     
     
     //used for solving
@@ -138,7 +153,8 @@ export class Ninjase {
     location() {
         return new Coordinate(this.row,this.column);
     }
-    
+
+
     
     copy(){
         let w = new Ninjase(this.row,this.column);
@@ -172,6 +188,23 @@ export class Configuration {
         //if we found a wall that covers coordinate, return true; otherwise false.
         return idx >= 0;
     }
+
+
+    /**Determines if any keys in the puzzle covers given coordinates (of ninjase) */
+    isCoveredKey(coord){
+        let idx = this.keys.findIndex(key => key.contains(coord));
+        console.log(idx)
+        
+        //if we found a key that covers coordinate, return true; otherwise false.
+        return idx >= 0;
+    }
+    keyPickUp() {
+        if(this.isCoveredKey(new Coordinate(this.ninjase[0].row, this.ninjase[0].column))){
+            console.log('key here!')
+        }
+    }
+
+ 
     
     
     availableMoves(){

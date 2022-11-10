@@ -26,9 +26,18 @@ export function moveNinjase(model,direction){
     
 
     selected[0].move(direction)
-    console.log("ninjase location: ROW= " + selected[0].row + " COLUMN= " + selected[0].column)
 
     model.updateMoveCount(+1);
 
     return model.copy(); 
+}
+
+
+
+export function pickUpKey(model){
+    let selected = model.configuration;
+    selected.keyPickUp();
+    model.updateMoveCount(+1);
+
+    return model.copy();
 }

@@ -6,6 +6,7 @@ import { layout } from './Layout';
 import Model from './model/Model.js';
 import { redrawCanvas } from './boundary/Boundary.js';
 import { moveNinjase } from './controller/Controller.js';
+import { pickUpKey } from './controller/Controller.js';
 import { Up, Down, Left, Right } from './model/Model.js';
 /////////////////////////////////////
 
@@ -35,9 +36,13 @@ function App() {
 
   const moveNinjaseHandler = (direction) => {
     let newModel = moveNinjase(model,direction);
-    setModel(newModel); //react to chanes, if model has changed.
+    setModel(newModel); //react to changes, if model has changed.
   }
 
+  const pickUpKeyHandler = (model) => {
+    let newModel = pickUpKey(model);
+    setModel(newModel); //react to changes
+  }
 
 
 
@@ -63,7 +68,7 @@ function App() {
             <button style={layout.leftbutton} onClick={(e)=> moveNinjaseHandler(Left)} disabled={!model.available(Left)}>&lt;</button>
             <button style={layout.rightbutton} onClick={(e)=> moveNinjaseHandler(Right)} disabled={!model.available(Right)}>&gt;</button>
             <button style={layout.downbutton} onClick={(e)=> moveNinjaseHandler(Down)} disabled={!model.available(Down)}>v</button>
-            <button style={layout.pickupkeybutton}>Pick-Up Key!</button>
+            <button style={layout.pickupkeybutton} onClick={(e)=> pickUpKeyHandler(model)}>Pick-Up Key!</button>
         </div>
       </main>
   );
