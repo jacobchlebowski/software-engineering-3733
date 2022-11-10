@@ -32,6 +32,7 @@ export function moveNinjase(model,direction){
     if(model.configuration.isCoveredDoor(selected[0].location())){
         console.log("ninjase on door")
         let index = (model.configration.isCoveredDoorIndex(new Coordinate(selected[0].row, selected[0].column)))
+        //SPLICE DOOR FROM INDEX HERE
         console.log(index)
     }
 
