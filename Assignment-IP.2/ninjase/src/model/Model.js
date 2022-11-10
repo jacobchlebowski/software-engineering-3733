@@ -234,6 +234,12 @@ export class Configuration {
         return idx;
     }
 
+    deleteDoor(coord){
+        let index = this.isCoveredDoorIndex(coord)
+        this.doors.splice(index,1)
+        this.ninjase[0].currentKey = null
+    }
+
     
     keyPickUp() {
 
