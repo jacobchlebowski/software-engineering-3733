@@ -19,6 +19,15 @@ export const layout = {
         width:150,
     },
 
+    currentKeyText : {
+        position: "absolute",
+        left: 1000,
+        top: 190,
+        color:"yellow",
+        backgroundColor: "#320453",
+        width: 170,
+    },
+
 
     signature : {
         position: "absolute",

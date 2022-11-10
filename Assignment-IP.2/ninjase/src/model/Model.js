@@ -172,6 +172,7 @@ export class Configuration {
         this.numColumns = numColumns;
         this.ninjase = ninjase; 
     }
+  
     
     initialize(walls,keys,doors,ninjase){
         //make sure to create NEW walls/keys/doors objects
@@ -197,44 +198,47 @@ export class Configuration {
         //if we found a key that covers coordinate, return true; otherwise false.
         return idx;
     }
-
-
+    
     keyPickUp() {
 
         //IF NINJASE IS ON KEY
         if(  (this.isCoveredKey(new Coordinate(this.ninjase[0].row, this.ninjase[0].column))) >= 0  ){
             //INDEX OF KEY
             let index = (this.isCoveredKey(new Coordinate(this.ninjase[0].row, this.ninjase[0].column)))
-
             //NINJASE PICKUP KEY
-            
+        
             //if ninjase is not already holding a key... just pick it up...
-            if(this.ninjase.currentKey==null){
+            if(this.ninjase[0].currentKey==null){
                 //remove KEY from ARRAY AND GIVE TO NINJASE
                 if(index > -1){
                     let key = this.keys.splice(index,1)
-                    this.ninjase.currentKey=key
+                    this.ninjase[0].currentKey=key
                     //console.log(this.ninjase.currentKey[0])
                 }
             }
             //if ninjase is already holding a key...DROP current key and pickup new one
             else{
                 //recognize key on ground...old key on reserve
-                let oldKey = this.ninjase.currentKey[0]
-                oldKey.row = this.ninjase[0].row
-                oldKey.column = this.ninjase[0].column
-                oldKey.color = this.ninjase.currentKey[0].color
+                let oldKey = this.ninjase[0].currentKey
+                oldKey[0].row = this.ninjase[0].row
+                oldKey[0].column = this.ninjase[0].column
+
+                oldKey[0].color = this.ninjase[0].currentKey[0].color
+               
                 
                 if(index > -1){
                     let newKey = this.keys.splice(index,1)
-                    this.ninjase.currentKey[0]=newKey[0]
+                    this.ninjase[0].currentKey=newKey
                 }
-                this.keys.push(oldKey)
+
+                this.keys.push(oldKey[0])
             }
             
             
         }
     }
+
+
 
  
     
