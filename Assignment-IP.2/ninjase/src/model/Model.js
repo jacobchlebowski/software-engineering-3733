@@ -197,7 +197,7 @@ export class Configuration {
 
         //can ninjase move down?
         available = false
-        if(coord.row < 5){
+        if(coord.row < 4){
             available = true;
             let newCoordRowDown = coord.row+1
             if(this.isCovered(new Coordinate(newCoordRowDown, coord.column))){
@@ -207,7 +207,34 @@ export class Configuration {
         if(available){
             moves.push(Down);
         }
+
+
+        //can ninjase move right?
+        available = false
+        if(coord.column < 3){
+            available = true;
+            let newCoordColumnRight = coord.column+1
+            if(this.isCovered(new Coordinate(coord.row, newCoordColumnRight))){
+                available=false;
+            }
+        }
+        if(available){
+            moves.push(Right);
+        }
         
+
+        //can ninjase move left?
+        available = false
+        if(coord.column > 0){
+            available = true;
+            let newCoordColumnLeft = coord.column-1
+            if(this.isCovered(new Coordinate(coord.row, newCoordColumnLeft))){
+                available=false;
+            }
+        }
+        if(available){
+            moves.push(Left);
+        }
 
 
 
