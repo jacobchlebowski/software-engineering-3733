@@ -87,6 +87,21 @@ export class Door{
     location() {
         return new Coordinate(this.row,this.column);
     }
+
+    *coordinates(){
+        yield new Coordinate(this.row,this.column);
+    }
+    
+    contains(coord) {
+        let cs = [...this.coordinates()];   // javascript one liner.... turn all of those yield into a list.
+        for (let c of cs) {
+            if (c.row === coord.row && c.column === coord.column) { 
+                return true; 
+            } 
+        }
+        
+        return false;
+    }
     
     copy(){
         let d = new Door(this.row,this.column,this.color);
@@ -197,6 +212,19 @@ export class Configuration {
         return idx >= 0;
     }
 
+    /**Determines if any keys in the puzzle covers given coordinates (of ninjase) */
+    isCoveredDoor(coord){
+        let idx = this.doors.findIndex(door => door.contains(coord));
+        
+        //if we found a key that covers coordinate, return true; otherwise false.
+        return idx >= 0;
+    }
+    isCoveredDoorIndex(coord){
+        let idx = this.doors.findIndex(door => door.contains(coord));
+        
+        //if we found a key that covers coordinate, return true; otherwise false.
+        return idx;
+    }
 
     /**Determines if any keys in the puzzle covers given coordinates (of ninjase) */
     isCoveredKey(coord){
@@ -205,6 +233,7 @@ export class Configuration {
         //if we found a key that covers coordinate, return true; otherwise false.
         return idx;
     }
+
     
     keyPickUp() {
 
@@ -292,6 +321,19 @@ export class Configuration {
             let newCoordColumnRight = coord.column+1
             if(this.isCovered(new Coordinate(coord.row, newCoordColumnRight))){
                 available=false;
+            }
+            if(this.isCoveredDoor(new Coordinate(coord.row, newCoordColumnRight))){ //CHECK DOOR HERE
+                available=false;
+                //INDEX OF DOOR & DOOR COLOR
+                let index = (this.isCoveredDoorIndex(new Coordinate(this.ninjase[0].row, this.ninjase[0].column+1)))
+                let doorColor = this.doors[index].color
+                //console.log(this.ninjase[0].currentKey)
+                if(this.ninjase[0].currentKey === null){
+                    available=false;
+                }
+                else if(this.ninjase[0].currentKey.color === doorColor){
+                    available=true;
+                }
             }
         }
         if(available){
