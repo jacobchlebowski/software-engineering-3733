@@ -212,26 +212,23 @@ export class Configuration {
             if(this.ninjase.currentKey==null){
                 //remove KEY from ARRAY AND GIVE TO NINJASE
                 if(index > -1){
-                    console.log(this.ninjase.currentKey)
                     let key = this.keys.splice(index,1)
-                     this.ninjase.currentKey=key
-                    console.log(this.ninjase.currentKey)
+                    this.ninjase.currentKey=key
+                    //console.log(this.ninjase.currentKey[0])
                 }
             }
             //if ninjase is already holding a key...DROP current key and pickup new one
             else{
                 //recognize key on ground...old key on reserve
-                console.log("holding key: " +this.ninjase.currentKey)
-                let oldKey = new Key(this.ninjase.currentKey.row, this.ninjase.currentKey.column, this.ninjase.currentKey.color)
-                console.log("old key= " + oldKey)
-                console.log("current list of 1 key on ground= " + this.keys)
+                let oldKey = this.ninjase.currentKey[0]
                 if(index > -1){
                     let newKey = this.keys.splice(index,1)
-                    this.ninjase.currentKey=newKey
+                    this.ninjase.currentKey[0]=newKey[0]
                 }
-                console.log("list of nothing, middle of swap= " + this.keys)
-                this.keys.push(new Key(oldKey.row,oldKey.column,oldKey.color))
-                console.log("old key now in list " + this.keys)
+
+                // this.keys.push(new Key(oldKey.row,oldKey.column,oldKey.color))
+                this.keys.push(oldKey)
+                console.log(this.keys)
             }
             
             
