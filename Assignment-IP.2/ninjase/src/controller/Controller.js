@@ -1,5 +1,6 @@
 import { computeNinjaseRectangle } from "../boundary/Boundary";
 import { move } from "../model/Model";
+import { Coordinate } from "../model/Model"
 
 
 // export function selectPiece(model,canvas,event){
@@ -26,6 +27,16 @@ export function moveNinjase(model,direction){
     
 
     selected[0].move(direction)
+
+
+    if(model.configuration.isCoveredDoor(selected[0].location())){
+        console.log("ninjase on door")
+        let index = (model.configration.isCoveredDoorIndex(new Coordinate(selected[0].row, selected[0].column)))
+        console.log(index)
+    }
+
+
+
 
     model.updateMoveCount(+1);
 

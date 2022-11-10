@@ -330,8 +330,8 @@ export class Configuration {
                 //console.log(this.ninjase[0].currentKey)
                 if(this.ninjase[0].currentKey === null){
                     available=false;
-                }
-                else if(this.ninjase[0].currentKey.color === doorColor){
+                }else if (this.ninjase[0].currentKey[0].color === doorColor){
+                    //NINJASE CAN NOW WALK THROUGH CORRECT DOOR OF KEY COLOR!
                     available=true;
                 }
             }
