@@ -153,6 +153,13 @@ export class Ninjase {
     location() {
         return new Coordinate(this.row,this.column);
     }
+    currentColor(){
+        if(this.currentKey === null){
+            return "No key"
+        }else{
+            return this.currentKey[0].color
+        }
+    }
 
 
     
