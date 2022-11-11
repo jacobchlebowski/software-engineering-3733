@@ -255,7 +255,6 @@ export class Configuration {
                 if(index > -1){
                     let key = this.keys.splice(index,1)
                     this.ninjase[0].currentKey=key
-                    //console.log(this.ninjase.currentKey[0])
                 }
             }
             //if ninjase is already holding a key...DROP current key and pickup new one
@@ -300,6 +299,18 @@ export class Configuration {
             if (this.isCovered(new Coordinate(newCoordRowUp, coord.column))) {
                 available=false;
             }
+            if(this.isCoveredDoor(new Coordinate(newCoordRowUp, coord.column))){ //CHECK DOOR HERE
+                available=false;
+                //INDEX OF DOOR & DOOR COLOR
+                let index = (this.isCoveredDoorIndex(new Coordinate(this.ninjase[0].row-1, this.ninjase[0].column)))
+                let doorColor = this.doors[index].color
+                if(this.ninjase[0].currentKey === null){
+                    available=false;
+                }else if (this.ninjase[0].currentKey[0].color === doorColor){
+                    //NINJASE CAN NOW WALK THROUGH CORRECT DOOR OF KEY COLOR!
+                    available=true;
+                }
+            }
         }
         if(available){
             moves.push(Up);
@@ -314,6 +325,19 @@ export class Configuration {
             if(this.isCovered(new Coordinate(newCoordRowDown, coord.column))){
                 available=false;
             }
+            if(this.isCoveredDoor(new Coordinate(newCoordRowDown, coord.column))){ //CHECK DOOR HERE
+                available=false;
+                //INDEX OF DOOR & DOOR COLOR
+                let index = (this.isCoveredDoorIndex(new Coordinate(this.ninjase[0].row+1, this.ninjase[0].column)))
+                let doorColor = this.doors[index].color
+                if(this.ninjase[0].currentKey === null){
+                    available=false;
+                }else if (this.ninjase[0].currentKey[0].color === doorColor){
+                    //NINJASE CAN NOW WALK THROUGH CORRECT DOOR OF KEY COLOR!
+                    available=true;
+                }
+            }
+            
         }
         if(available){
             moves.push(Down);
@@ -333,7 +357,6 @@ export class Configuration {
                 //INDEX OF DOOR & DOOR COLOR
                 let index = (this.isCoveredDoorIndex(new Coordinate(this.ninjase[0].row, this.ninjase[0].column+1)))
                 let doorColor = this.doors[index].color
-                //console.log(this.ninjase[0].currentKey)
                 if(this.ninjase[0].currentKey === null){
                     available=false;
                 }else if (this.ninjase[0].currentKey[0].color === doorColor){
@@ -354,6 +377,18 @@ export class Configuration {
             let newCoordColumnLeft = coord.column-1
             if(this.isCovered(new Coordinate(coord.row, newCoordColumnLeft))){
                 available=false;
+            }
+            if(this.isCoveredDoor(new Coordinate(coord.row, newCoordColumnLeft))){ //CHECK DOOR HERE
+                available=false;
+                //INDEX OF DOOR & DOOR COLOR
+                let index = (this.isCoveredDoorIndex(new Coordinate(this.ninjase[0].row, this.ninjase[0].column-1)))
+                let doorColor = this.doors[index].color
+                if(this.ninjase[0].currentKey === null){
+                    available=false;
+                }else if (this.ninjase[0].currentKey[0].color === doorColor){
+                    //NINJASE CAN NOW WALK THROUGH CORRECT DOOR OF KEY COLOR!
+                    available=true;
+                }
             }
         }
         if(available){
