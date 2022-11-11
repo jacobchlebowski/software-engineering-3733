@@ -52,3 +52,13 @@ export function pickUpKey(model){
 
     return model.copy();
 }
+
+
+export function reset(model){
+    return model.copy();
+}
+
+//this.configuration = new Configuration(numRows,numColumns,ninjase)
+//this.configuration.initialize(allWalls,allKeys,allDoors,allNinjase);
+//this.numMoves = 0;
+//this.victory = false;

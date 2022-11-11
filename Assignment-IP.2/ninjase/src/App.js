@@ -3,17 +3,21 @@
 import React from 'react';
 import './App.css';
 import { layout } from './Layout';
-import Model from './model/Model.js';
+import Model, { Configuration, Coordinate, Wall } from './model/Model.js';
 import { redrawCanvas } from './boundary/Boundary.js';
 import { moveNinjase } from './controller/Controller.js';
 import { pickUpKey } from './controller/Controller.js';
+import { reset } from './controller/Controller.js';
 import { Up, Down, Left, Right } from './model/Model.js';
 /////////////////////////////////////
 
 
 //Model
 import { level1 } from './model/Configuration.js'
-var actualConfiguration = JSON.parse(JSON.stringify(level1));
+import { level2 } from './model/Configuration.js'
+import { level3 } from './model/Configuration.js'
+let currentLevel = level1
+var actualConfiguration = JSON.parse(JSON.stringify(currentLevel));
 
 
 //Application
@@ -33,7 +37,6 @@ function App() {
   }, [model])   // this second argument is CRITICAL, since it declares when to refresh (whenever Model changes)
 
 
-
   const moveNinjaseHandler = (direction) => {
     let newModel = moveNinjase(model,direction);
     setModel(newModel); //react to changes, if model has changed.
@@ -44,16 +47,26 @@ function App() {
     setModel(newModel); //react to changes
   }
 
+  const resetHandler = (model) => {
+    let newModel = new Model(JSON.parse(JSON.stringify(currentLevel)))
+    setModel(newModel)
+  }
+
+  const levelTwoHandler = (model) => {
+    let newModel = ""
+    currentLevel = level2
+  }
+
 
 
   return (
       <main style={layout.Appmain} ref={appRef}>
         <div style={layout.configurationbuttons}>
         <button style={layout.levelbuttonsone}>Level 1</button>
-        <button style={layout.levelbuttonstwo}>Level 2</button>
+        <button style={layout.levelbuttonstwo} onClick={(e)=> levelTwoHandler(model)}>Level 2</button>
         <button style={layout.levelbuttonsthree}>Level 3</button>
         </div>
-        <button style={layout.resetbutton}>Reset!</button>
+        <button style={layout.resetbutton} onClick={(e)=> resetHandler(model)}>Reset!</button>
         <canvas tabIndex="1"
         className="App-canvas"
         ref={canvasRef}
