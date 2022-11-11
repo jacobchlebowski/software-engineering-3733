@@ -52,9 +52,22 @@ function App() {
     setModel(newModel)
   }
 
+  const levelOneHandler = (model) => {
+    currentLevel = level1
+    let newModel = new Model(JSON.parse(JSON.stringify(currentLevel)))
+    setModel(newModel)
+  }
+
   const levelTwoHandler = (model) => {
-    let newModel = ""
     currentLevel = level2
+    let newModel = new Model(JSON.parse(JSON.stringify(currentLevel)))
+    setModel(newModel)
+  }
+
+  const levelThreeHandler = (model) => {
+    currentLevel = level3
+    let newModel = new Model(JSON.parse(JSON.stringify(currentLevel)))
+    setModel(newModel)
   }
 
 
@@ -62,9 +75,9 @@ function App() {
   return (
       <main style={layout.Appmain} ref={appRef}>
         <div style={layout.configurationbuttons}>
-        <button style={layout.levelbuttonsone}>Level 1</button>
+        <button style={layout.levelbuttonsone} onClick={(e)=> levelOneHandler(model)}>Level 1</button>
         <button style={layout.levelbuttonstwo} onClick={(e)=> levelTwoHandler(model)}>Level 2</button>
-        <button style={layout.levelbuttonsthree}>Level 3</button>
+        <button style={layout.levelbuttonsthree} onClick={(e)=> levelThreeHandler(model)}>Level 3</button>
         </div>
         <button style={layout.resetbutton} onClick={(e)=> resetHandler(model)}>Reset!</button>
         <canvas tabIndex="1"
