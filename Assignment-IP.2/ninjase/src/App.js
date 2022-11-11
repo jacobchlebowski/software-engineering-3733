@@ -7,7 +7,6 @@ import Model, { Configuration, Coordinate, Wall } from './model/Model.js';
 import { redrawCanvas } from './boundary/Boundary.js';
 import { moveNinjase } from './controller/Controller.js';
 import { pickUpKey } from './controller/Controller.js';
-import { reset } from './controller/Controller.js';
 import { Up, Down, Left, Right } from './model/Model.js';
 /////////////////////////////////////
 

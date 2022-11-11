@@ -192,7 +192,8 @@ export class Configuration {
     constructor(numRows,numColumns, ninjase){
         this.numRows = numRows;
         this.numColumns = numColumns;
-        this.ninjase = ninjase; 
+        this.ninjase = ninjase;
+        console.log(numRows)
     }
   
     
@@ -353,7 +354,7 @@ export class Configuration {
 
         //can ninjase move right? //ALSO CHECK NOW IF DOOR IS THERE CAN NINJASE MOVE INTO DOOR
         available = false
-        if(coord.column < 3){
+        if(coord.column < this.numColumns-1){
             available = true;
             let newCoordColumnRight = coord.column+1
             if(this.isCovered(new Coordinate(coord.row, newCoordColumnRight))){
