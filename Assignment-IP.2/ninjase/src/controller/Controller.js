@@ -49,7 +49,6 @@ export function moveNinjase(model,direction){
 export function pickUpKey(model){
     let selected = model.configuration;
     selected.keyPickUp();
-    model.updateMoveCount(+1);
 
     return model.copy();
 }

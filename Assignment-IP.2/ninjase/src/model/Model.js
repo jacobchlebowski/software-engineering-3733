@@ -239,6 +239,13 @@ export class Configuration {
         this.doors.splice(index,1)
         this.ninjase[0].currentKey = null
     }
+    victory(){
+        if(this.doors.length===0){
+            return "VICTORY!"
+        }else{
+            return ""
+        }
+    }
 
     
     keyPickUp() {

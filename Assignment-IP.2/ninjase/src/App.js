@@ -63,7 +63,8 @@ function App() {
         <br></br><label style={layout.signature}>Jacob Chlebowski</label><br></br>
         <label style={layout.signature}>jachlebowski@wpi.edu</label>
         <label style={layout.text}> {"number of moves: " + model.numMoves}</label>
-        <label style={layout.currentKeyText}> {"current key: " + JSON.stringify(model.configuration.ninjase[0].currentColor())}</label>
+        <label style={layout.currentKeyText}> {"current key: " + model.configuration.ninjase[0].currentColor()}</label>
+        <label style={layout.victoryText}> {" " + model.configuration.victory()}</label>
         <div style={layout.buttons}>
             <button style={layout.upbutton} onClick={(e)=> moveNinjaseHandler(Up)} disabled={!model.available(Up)}>^</button>
             <button style={layout.leftbutton} onClick={(e)=> moveNinjaseHandler(Left)} disabled={!model.available(Left)}>&lt;</button>

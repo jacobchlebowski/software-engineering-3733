@@ -28,6 +28,15 @@ export const layout = {
         width: 170,
     },
 
+    victoryText : {
+        position: "absolute",
+        left: 730,
+        top: 190,
+        color:"yellow",
+        backgroundColor: "#320453",
+        width: 170,
+    },
+
 
     signature : {
         position: "absolute",
