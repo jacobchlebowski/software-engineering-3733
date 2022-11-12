@@ -193,7 +193,6 @@ export class Configuration {
         this.numRows = numRows;
         this.numColumns = numColumns;
         this.ninjase = ninjase;
-        console.log(numRows)
     }
   
     
@@ -292,12 +291,11 @@ export class Configuration {
  
     
     
-    availableMoves(){
+    availableMoves(currentLevelRows){
         let p = this.ninjase[0];
         if (p == null) {return []; }
         let moves = [];
         let coord = this.ninjase[0].location();
-
 
         //can ninjase move up?
         let available = false
@@ -327,7 +325,7 @@ export class Configuration {
 
         //can ninjase move down?
         available = false
-        if(coord.row < 4){
+        if(coord.row < currentLevelRows-1){
             available = true;
             let newCoordRowDown = coord.row+1
             if(this.isCovered(new Coordinate(newCoordRowDown, coord.column))){
@@ -498,9 +496,10 @@ export default class Model {
     }
     
     
-    available(direction){
+    available(direction, currentLevel){
+        let currentLevelRows = currentLevel.rows
         if(direction === NoMove) {return false;}
-        let allMoves = this.configuration.availableMoves();
+        let allMoves = this.configuration.availableMoves(currentLevelRows);
         return allMoves.includes(direction);
     }
     

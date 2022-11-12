@@ -31,7 +31,6 @@ export function moveNinjase(model,direction){
 
     if(model.configuration.isCoveredDoor(selected[0].location())){
         let coord = new Coordinate(selected[0].row,selected[0].column)
-        console.log(coord)
         
         model.configuration.deleteDoor(coord);
     }

@@ -91,10 +91,10 @@ function App() {
         <label style={layout.currentKeyText}> {"current key: " + model.configuration.ninjase[0].currentColor()}</label>
         <label style={layout.victoryText}> {" " + model.configuration.victory()}</label>
         <div style={layout.buttons}>
-            <button style={layout.upbutton} onClick={(e)=> moveNinjaseHandler(Up)} disabled={!model.available(Up)}>^</button>
-            <button style={layout.leftbutton} onClick={(e)=> moveNinjaseHandler(Left)} disabled={!model.available(Left)}>&lt;</button>
-            <button style={layout.rightbutton} onClick={(e)=> moveNinjaseHandler(Right)} disabled={!model.available(Right)}>&gt;</button>
-            <button style={layout.downbutton} onClick={(e)=> moveNinjaseHandler(Down)} disabled={!model.available(Down)}>v</button>
+            <button style={layout.upbutton} onClick={(e)=> moveNinjaseHandler(Up)} disabled={!model.available(Up,currentLevel)}>^</button>
+            <button style={layout.leftbutton} onClick={(e)=> moveNinjaseHandler(Left)} disabled={!model.available(Left,currentLevel)}>&lt;</button>
+            <button style={layout.rightbutton} onClick={(e)=> moveNinjaseHandler(Right)} disabled={!model.available(Right,currentLevel)}>&gt;</button>
+            <button style={layout.downbutton} onClick={(e)=> moveNinjaseHandler(Down)} disabled={!model.available(Down,currentLevel)}>v</button>
             <button style={layout.pickupkeybutton} onClick={(e)=> pickUpKeyHandler(model)}>Pick-Up Key!</button>
         </div>
       </main>
