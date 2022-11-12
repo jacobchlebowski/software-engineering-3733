@@ -78,7 +78,7 @@ export function drawConfiguration(ctx,configuration){
 
     configuration.ninjase.forEach(ninjase=>{
         let rect = computeNinjaseRectangle(ninjase);
-        ctx.fillStyle = 'purple';
+        ctx.fillStyle = '#a349a4';
         ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
     })
     
