@@ -1,0 +1,246 @@
+commit 0531d785e5904db637b88e1102f582f256e6656d
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Thu Dec 15 13:17:34 2022 -0500
+
+    deleting extra files
+
+commit 81ecc4330885c4c32fecc9b8ea53d73660205082
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Thu Dec 15 12:54:21 2022 -0500
+
+    final push
+
+commit f3bd0f24f33a160f7af000ff225717337763cf19
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Wed Dec 14 13:16:10 2022 -0500
+
+    review use cases
+
+commit a06c11d7fe5b022bfa16715111737df06265a378
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Mon Dec 12 15:14:21 2022 -0500
+
+    commit
+
+commit f9e3383829c23daded1e7680bfba415a2c9bb7e8
+Author: pjsalisbury <@@TppgJ7355>
+Date:   Mon Dec 12 14:44:25 2022 -0500
+
+    client addFunds
+
+commit 5d6872802d528f9ded114c5acff648266b23a72a
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Fri Dec 9 16:51:32 2022 -0500
+
+    finalized iteration 2
+
+commit 11bcdc68da66bdbf9eaf3a5cefc0ba7b8ea3951d
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Fri Dec 9 15:43:18 2022 -0500
+
+    finished iteration2
+
+commit 93933306f98a4f1dbbdfdf57e93e598c74e1e4c8
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Fri Dec 9 15:30:22 2022 -0500
+
+    commit
+
+commit f55e2dc093f4986b13ac96f44e538b4098e82a09
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Fri Dec 9 14:55:09 2022 -0500
+
+    nearly finished with iteration 2
+
+commit bd6d4abea8f4efa44de7796862360d1d9b0ea5aa
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Thu Dec 8 13:43:18 2022 -0500
+
+    await/async problems
+
+commit 011d8de6ce9c98aab94c1a718482bef764c0c0b4
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Mon Dec 5 19:48:30 2022 -0500
+
+    Delete Project Finished
+
+commit a89cbc4b686dba0e12851395f6ca9ae85e146c23
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Mon Dec 5 18:58:44 2022 -0500
+
+    Finished search projects
+
+commit e8ac026c67913b8f2b98714c9f027aa1ca1d1eb9
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Mon Dec 5 13:48:28 2022 -0500
+
+    fixes 12/5
+
+commit 907375a997ff2eb417c1327282bc83c3d56632e4
+Author: pjsalisbury <@@TppgJ7355>
+Date:   Mon Dec 5 13:47:40 2022 -0500
+
+    add dropdown for genre
+
+commit 57a96dae302c12689c5ccbcd366b4555b8a27755
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Thu Dec 1 13:54:05 2022 -0500
+
+    final changes
+
+commit fa4e7f5231f994e084f73336ddd8ebf600631345
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Thu Dec 1 13:39:10 2022 -0500
+
+    finished iteration 1
+
+commit 55a422d5a627304da05e91ae665221a92f34dd3d
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Thu Dec 1 00:29:53 2022 -0500
+
+    iteration1 complete?
+
+commit 3d4d167f7e94922427fd9f179b76c7c17427db7d
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Wed Nov 30 23:34:47 2022 -0500
+
+    finished admin
+
+commit 6ed041481ac112631391584a5f5e2a5b397d432a
+Author: zaq humphrey <zaqis@MacBook-Pro-3.local>
+Date:   Wed Nov 30 21:08:02 2022 -0500
+
+    listprojects progress
+
+commit e721336dfce9c7c074345152190f787597906705
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Wed Nov 30 15:10:17 2022 -0500
+
+    update register.js
+
+commit 36e0fee39f2d10d23ffb1855e1e59a8ac00215ad
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Wed Nov 30 15:05:55 2022 -0500
+
+    updated register.js
+
+commit 290bc11a14f12c84bf930bc9b9f98e003ad507e4
+Author: pjsalisbury <@@TppgJ7355>
+Date:   Wed Nov 30 14:59:46 2022 -0500
+
+    destroy repo
+
+commit 3c1817b955c4a002f6c204b7f9d32f25fd914831
+Merge: 68004af e78c0b4
+Author: pjsalisbury <@@TppgJ7355>
+Date:   Wed Nov 30 13:42:02 2022 -0500
+
+    Merge remote-tracking branch 'origin/aws' into aws
+
+commit 68004af8b6e8b8ded9b5b36bb5c43421e70da69e
+Author: pjsalisbury <@@TppgJ7355>
+Date:   Wed Nov 30 13:41:49 2022 -0500
+
+    create pledge
+
+commit e78c0b40b2dfc7a3b7c1131a4326354ff0cefe39
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Wed Nov 30 13:26:37 2022 -0500
+
+    loginpage progress
+
+commit 0f94b55bd0d446555da57cb414553c0eda4e83ad
+Author: pjsalisbury <@@TppgJ7355>
+Date:   Wed Nov 30 13:24:53 2022 -0500
+
+    fixes
+
+commit 1e0eee2a25531de09084830b3d9ae3d9a2a8a3a6
+Author: pjsalisbury <@@TppgJ7355>
+Date:   Wed Nov 30 13:18:47 2022 -0500
+
+    create-project js
+
+commit 61fdc9a0a75c72de41d3558e144903d77cf7dde1
+Author: zaq humphrey <zaqis@MacBook-Pro-2.local>
+Date:   Tue Nov 29 23:28:54 2022 -0500
+
+    commit
+
+commit b5ae565a94c8977bbbfc7293697c6e05b579d35a
+Author: zaq humphrey <zaqis@MacBook-Pro-2.local>
+Date:   Tue Nov 29 20:43:57 2022 -0500
+
+    commit
+
+commit 1222ff631cfb4bc972f6b03d7f7861f7eeebd1b4
+Author: zaq humphrey <zaqis@MacBook-Pro-2.local>
+Date:   Tue Nov 29 20:37:52 2022 -0500
+
+    commit
+
+commit e6f5325148ed7968406264315a3bc84102bf6c50
+Author: zaq humphrey <zaqis@MacBook-Pro-2.local>
+Date:   Tue Nov 29 20:30:59 2022 -0500
+
+    commit
+
+commit a3bdbb8248548aefa82151f4944336ab3525b0c0
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Tue Nov 29 13:24:43 2022 -0500
+
+    commit
+
+commit d7c1c2a143a2d6932f21d81a7f97c469e1295c88
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Tue Nov 29 12:46:31 2022 -0500
+
+    commit
+
+commit 0e14c6261571f4220bb9ae48e82f96e97e30f405
+Author: zaq humphrey <zaqis@autoreg-5175767.dyn.wpi.edu>
+Date:   Tue Nov 29 10:46:15 2022 -0500
+
+    commit
+
+commit 84f61e3828eb771a468f628b59c0ffc45e2e94ed
+Author: Zaq Humphrey <zihumphrey@wpi.edu>
+Date:   Tue Nov 29 04:36:11 2022 +0000
+
+    commit
+
+commit e6eaaf0371020b6e91020670eecae51d3f0cd0b8
+Author: Zaq Humphrey <zihumphrey@wpi.edu>
+Date:   Thu Nov 17 20:14:38 2022 +0000
+
+    commit
+
+commit 57332fe2b590f2c94ce06ba82b9d0b2697652a19
+Author: Zaq Humphrey <zihumphrey@wpi.edu>
+Date:   Thu Nov 17 20:11:20 2022 +0000
+
+    fix repository
+
+commit 5b11aed2963980251ea7ff5f85e98e4e2fd3f2a7
+Author: Zaq Humphrey <zihumphrey@wpi.edu>
+Date:   Sun Nov 6 21:59:04 2022 +0000
+
+    fix
+
+commit 4e9e5b5539bbe05b42582dc9125681d45ba3c7ff
+Author: Zaq Humphrey <zihumphrey@wpi.edu>
+Date:   Sun Nov 6 19:50:37 2022 +0000
+
+    first working
+
+commit d860b97a83ef2deb14d961a2528aa7eec198907a
+Author: Zaq Humphrey <zihumphrey@wpi.edu>
+Date:   Sun Nov 6 19:04:35 2022 +0000
+
+    first change
+
+commit 2a5ba69bf3a261d2e4c2fab2b63569bcf16d7316
+Author: Humphrey, Zaq I (724852400) <zihumphrey@wpi.edu>
+Date:   Sun Nov 6 18:58:06 2022 +0000
+
+    Initial commit

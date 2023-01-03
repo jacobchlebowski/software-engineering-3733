@@ -1,0 +1,3 @@
+{
+"body" : "{\n  \"name\" : \"Project3\",\n  \"designer\" : \"testUsername\",\n  \"genre\" : \"stuff\",\n  \"description\" : \"help\",\n  \"goal\": \"500\",\n  \"deadline\" : \"12-22-2025\"\n}"
+}

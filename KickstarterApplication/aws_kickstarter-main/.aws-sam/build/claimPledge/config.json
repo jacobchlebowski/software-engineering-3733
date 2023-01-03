@@ -1,0 +1,6 @@
+{
+    "host"     : "kickstarterdb.ch0xkktsmmaa.us-east-1.rds.amazonaws.com",
+    "user"     : "dbAdmin",
+    "password" : "ZaJaPaNi123",
+    "database" : "info_kickstarter"
+}

@@ -1,0 +1,272 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Calculator
+
+  Sample SAM Template for Calculator
+
+  '
+Globals:
+  Function:
+    Timeout: 5
+  Api:
+    Cors:
+      AllowMethods: '''GET,POST,OPTIONS'''
+      AllowHeaders: '''content-type'''
+      AllowOrigin: '''*'''
+Resources:
+  Register:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: Register
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /register
+            Method: post
+    Metadata:
+      SamResourceId: Register
+  listProjects:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: listProjects
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /listProjects
+            Method: post
+    Metadata:
+      SamResourceId: listProjects
+  createProject:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: createProject
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /createProject
+            Method: post
+    Metadata:
+      SamResourceId: createProject
+  viewProject:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: viewProject
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /viewProject
+            Method: post
+    Metadata:
+      SamResourceId: viewProject
+  viewPledge:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: viewPledge
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /viewPledge
+            Method: post
+    Metadata:
+      SamResourceId: viewPledge
+  claimPledge:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: claimPledge
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /claimPledge
+            Method: post
+    Metadata:
+      SamResourceId: claimPledge
+  setLaunched:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: setLaunched
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /setLaunched
+            Method: post
+    Metadata:
+      SamResourceId: setLaunched
+  deletePledge:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: deletePledge
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /deletePledge
+            Method: post
+    Metadata:
+      SamResourceId: deletePledge
+  addFunds:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: addFunds
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /addFunds
+            Method: post
+    Metadata:
+      SamResourceId: addFunds
+  directSupport:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: directSupport
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /directSupport
+            Method: post
+    Metadata:
+      SamResourceId: directSupport
+  reapProjects:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: reapProjects
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /reapProjects
+            Method: post
+    Metadata:
+      SamResourceId: reapProjects
+  reviewProjectActivity:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: reviewProjectActivity
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /reviewProjectActivity
+            Method: post
+    Metadata:
+      SamResourceId: reviewProjectActivity
+  reviewSupporterActivity:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: reviewSupporterActivity
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /reviewSupporterActivity
+            Method: post
+    Metadata:
+      SamResourceId: reviewSupporterActivity
+  createpledge:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: createpledge
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /createpledge
+            Method: post
+    Metadata:
+      SamResourceId: createpledge
+  deleteProject:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: deleteProject
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /deleteProject
+            Method: post
+    Metadata:
+      SamResourceId: deleteProject
+  Login:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: Login
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+      - x86_64
+      Events:
+        Adder:
+          Type: Api
+          Properties:
+            Path: /login
+            Method: post
+    Metadata:
+      SamResourceId: Login

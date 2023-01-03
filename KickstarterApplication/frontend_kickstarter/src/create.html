@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a Project</title>
+</head>
+<body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="create.js"></script>
+<h1>Designer Page:</h1>
+<h1>Create a Project:</h1>
+<label for="name"></label><input id="name" type="text" placeholder="project name:"><br>
+<label for="description"></label><textarea id="description" placeholder="Describe your project:" cols="50"></textarea><br>
+<label for="genre">Genre: </label>
+<select name="genre" id="genre">
+    <option value="Art">Art</option>
+    <option value="Comics">Comics</option>
+    <option value="Crafts">Crafts</option>
+    <option value="Dance">Dance</option>
+    <option value="Design">Design</option>
+    <option value="Fashion">Fashion</option>
+    <option value="Film/Video">Film/Video</option>
+    <option value="Food">Food</option>
+    <option value="Games">Games</option>
+    <option value="Journalism">Journalism</option>
+    <option value="Music">Music</option>
+    <option value="Photography">Photography</option>
+    <option value="Publishing">Publishing</option>
+    <option value="Technology">Technology</option>
+    <option value="Theater">Theater</option>
+</select><br>
+<label for="goal"></label><input id="goal" type="number" placeholder="funding goal (dollars)"><br>
+<label for="deadline"></label><input id="deadline" type="date" placeholder="deadline (MM-DD-YYYY)"><br>
+<button onClick="createProject()">Create Project</button>
+<h1>Create A Pledge</h1>
+<label for="proj"></label><input id="proj" type="text" placeholder="Parent project name:"><br>
+<label for="pledge"></label><input id="pledge" type="text" placeholder="pledge name"><br>
+<label for="pledgedescription"></label><textarea id="pledgedescription" placeholder="Describe this pledge:" cols="50"></textarea><br>
+<label for="pledgeamount"></label><input id="pledgeamount" type="number" placeholder="pledge amount (dollars)"><br>
+<label for="quantity"></label><input id="quantity" type="number" placeholder="max # of claims"><br>
+<button onClick="createPledge()">Create</button>
+<br>
+<br>
+<div id="projects">
+    <label>Project List:</label><br>
+    <table id="projectList" border="collapse"></table>
+    <br>
+    <br>
+    <h3>Launch Project:</h3>
+    <label for="projectLaunch">Project Name:</label><input id="projectLaunch" type="text" placeholder="project name"><br>
+    <label for="confirmLaunch">Confirm Project:</label><input id="confirmLaunch" type="text" placeholder="type 'confirm' to confirm"><br>
+    <button id="btn" onClick="launchProject()">Launch Project</button>
+    <br>
+    <br>
+    <h3>View Project:</h3>
+    <label for="view">View Project:</label><input id="view" type="text" placeholder="project name"><br>
+    <button id="btn" onClick="viewProject()">View Project</button>
+    <br>
+    <br>
+    <label>Project details:</label>
+    <table id="details" border="double" style="width:100%"></table>
+    <br>
+    <br>
+    <label>Pledge details:</label>
+    <table id="pledgeDetails" border="double" style="width:100%"></table>
+    <br>
+    <br>
+    <h3>Delete Project:</h3>
+    <label for="deleteProject">Project Name:</label><input id="deleteProject" type="text" placeholder="project name"><br>
+    <label for="confirmProject">Confirm Project:</label><input id="confirmProject" type="text" placeholder="type 'confirm' to confirm"><br>
+    <button id="btn" onClick="deleteProject()">Delete Project</button>
+    <br>
+    <br>
+    <h3>Delete Pledge:</h3>
+    <!-- <label for="pledgeProject">Project Name:</label><input id="pledgeProject" type="text" placeholder="project name"><br> -->
+    <label for="pledgePledge">Pledge Name:</label><input id="pledgePledge" type="text" placeholder="pledge name"><br>
+    <label for="confirmPledge">Confirm Delete:</label><input id="confirmPledge" type="text" placeholder="type 'confirm' to confirm"><br>
+    <button id="btn" onClick="deletePledge()">Delete Pledge</button>
+    <br>
+    <br>
+    <h3>Project Activity:</h3>
+    <label for="projectActivity">Project Name:</label><input id="projectActivity" type="text" placeholder="project name"><br>
+    <button id="btn" onClick="reviewProjectActivity()">Review Project Activity</button>
+    <table id="activity" border="double" style="width:100%"></table>
+</div>
+</body>
+</html>

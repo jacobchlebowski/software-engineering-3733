@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register an Account</title>
+</head>
+<body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="register.js"></script>
+<h1>Register an Account:</h1>
+<label for="username">username:</label><input id="username" type="text" placeholder="username"><br>
+<label for="password">password:</label><input id="password" type="text" placeholder="password"><br>
+<button onClick="registerDesigner()">Register as Designer</button>
+<button onClick="registerSupporter()">Register as Supporter</button>
+<br>
+<br>
+<h1>Log into an Account:</h1>
+<label for="usernamelog">username:</label><input id="usernamelog" type="text" placeholder="username"><br>
+<label for="passwordlog">password:</label><input id="passwordlog" type="text" placeholder="password"><br>
+<button onClick="loginDesigner()">Login as Designer</button>
+<button onClick="loginSupporter()">Login as Supporter</button>
+<button onClick="loginAdmin()">Login as Admin</button>
+</body>
+</html>
